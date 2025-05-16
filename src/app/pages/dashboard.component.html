@@ -1,0 +1,11 @@
+<div class="dashboard">
+    <h2>Welcome, {{ userName }}!</h2>
+    <p>Select an option below:</p>
+  
+    <div class="card-container">
+      <a routerLink="/give" class="card">Give</a>
+      <a routerLink="/history" class="card">Payment History</a>
+      <a routerLink="/login" class="card logout" (click)="logout()">Logout</a>
+    </div>
+  </div>
+  

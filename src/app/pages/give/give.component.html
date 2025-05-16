@@ -1,0 +1,39 @@
+<div class="give-container">
+  <h2>Support ACC&S Thika Cathedral</h2>
+
+  <form (ngSubmit)="onSubmit()" #giveForm="ngForm">
+    <label for="purpose">Payment Purpose:</label>
+    <select id="purpose" [(ngModel)]="paymentPurpose" name="purpose" required>
+      <option value="" disabled selected>Select Purpose</option>
+      <option value="Tithe">Tithe</option>
+      <option value="Offering">Offering</option>
+      <option value="Thanksgiving">Thanksgiving</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="amount">Amount (KES):</label>
+    <input
+      type="number"
+      id="amount"
+      name="amount"
+      [(ngModel)]="amount"
+      required
+      min="1"
+    />
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input
+      type="tel"
+      id="phoneNumber"
+      name="phoneNumber"
+      [(ngModel)]="phoneNumber"
+      required
+      pattern="07[0-9]{8}"
+      placeholder="e.g. 0712345678"
+    />
+
+    <button type="submit">Give via M-Pesa</button>
+
+    <p *ngIf="message">{{ message }}</p>
+  </form>
+</div>
